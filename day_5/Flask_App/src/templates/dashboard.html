@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Dashboard</h1>
+    <p>Logged in as {{ current_user.name }}</p>
+    <p>Email: {{ current_user.email }}</p>
+    <a href="/logout" class="btn btn-danger">Logout</a>
+{% endblock %}
