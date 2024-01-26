@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Cookies and Sessions</h1>
+    <br>
+    <h2> Cookie </h2>
+    <h3> Set Cookie </h3>
+    <form action="/setcookie" method="post">
+        <input type="text" name="key" placeholder="Cookie key">
+        <input type="text" name="value" placeholder="Cookie value">
+        <input type="text" name="max_age" placeholder="Cookie max age" type="number">
+        <input type="submit" value="Set Cookie!">
+    </form>
+    <br>
+    <h3> Get Cookie </h3>
+    <form action="/getcookie" method="post">
+        <input type="text" name="key" placeholder="Cookie key">
+        <input type="submit" value="Get Cookie!">
+    </form>
+    {% if key and value %}
+    <p> {{ key }}: {{ value }} </p>
+    {% endif %}
+    <br>
+    <h3> Delete Cookie </h3>
+    <form action="/deletecookie" method="post">
+        <input type="text" name="key" placeholder="Cookie key">
+        <input type="submit" value="Delete Cookie!">
+    </form>
+    <br>
+    <h3> Clear All Cookies </h3>
+    <form action="/clearcookies" method="post">
+        <input type="submit" value="Clear All Cookies!">
+    </form>
+    <br>
+    <br>
+    <h2> Session </h2>
+    <h3> Set Session </h3>
+    <form action="/setsession" method="post">
+        <input type="text" name="key" placeholder="Session key">
+        <input type="text" name="value" placeholder="Session value">
+        <input type="submit" value="Set Session!">
+    </form>
+    <br>
+    <h3> Get Session </h3>
+    <form action="/getsession" method="post">
+        <input type="text" name="key" placeholder="Session key">
+        <input type="submit" value="Get Session!">
+    </form>
+    {% if key and value %}
+    <p> {{ key }}: {{ value }} </p>
+    {% endif %}
+    <br>
+    <h3> Delete Session </h3>
+    <form action="/deletesession" method="post">
+        <input type="text" name="key" placeholder="Session key">
+        <input type="submit" value="Delete Session!">
+    </form>
+    <br>
+    <h3> Clear All Sessions </h3>
+    <form action="/clearsessions" method="post">
+        <input type="submit" value="Clear All Sessions!">
+    </form>
+    <br>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Set 'name' Cookie</h1>
+    <form action="/setcookie" method="POST">
+        <input type="text" name="name" placeholder="Name">
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}

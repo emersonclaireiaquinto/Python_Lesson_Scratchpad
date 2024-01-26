@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Home</h1>
+    {% for name in names %}
+    {% if name == "Bob"%}
+        <p>Hello, {{ name }}! (You are a member of the site)</p>
+    {% else %}
+        <p>Hello, {{ name }}!</p>
+        <br> 
+    {% endif %}
+    {% endfor %}
+{% endblock %}
